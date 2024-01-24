@@ -12,8 +12,8 @@ export default defineConfig({
       injectRegister: 'auto',
       manifest: {
         name: 'PWA Sample Apps',
-        short_name: 'PWAApps',
-        description: 'PWA Apps',
+        short_name: 'ENDO Takumi portfolio',
+        description: '遠藤拓巳のポートフォリオです。',
         theme_color: '#ffffff',
         icons: [
           {
