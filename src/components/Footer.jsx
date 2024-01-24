@@ -2,8 +2,8 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-200 p-4 mt-8">
-      <p className="text-center text-gray-600">フッターのコンテンツ</p>
+    <footer className="bg-gray-200 text-center p-4 absolute bottom-0 w-full">
+      <p>© 2024 Your Company</p>
     </footer>
   );
 };

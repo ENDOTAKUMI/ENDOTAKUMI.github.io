@@ -3,16 +3,22 @@ import { Link } from 'react-router-dom';
 
 const Navigation = (props) => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/a">ScreenA</Link>
+    <nav className="bg-gray-800 p-4">
+      <ul className="flex justify-between">
+        <li className="mr-6">
+          <Link to="/a" className="text-white hover:text-gray-300">
+            ScreenA
+          </Link>
         </li>
-        <li>
-          <Link to="/b">ScreenB</Link>
+        <li className="mr-6">
+          <Link to="/b" className="text-white hover:text-gray-300">
+            ScreenB
+          </Link>
         </li>
-        <li>
-          <Link to="/c">ScreenC</Link>
+        <li className="mr-6">
+          <Link to="/c" className="text-white hover:text-gray-300">
+            ScreenC
+          </Link>
         </li>
       </ul>
     </nav>
