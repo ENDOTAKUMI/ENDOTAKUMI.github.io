@@ -1,0 +1,40 @@
+name: "プルリクエストに変更内容のラベルを付ける"
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  auto-labeling-pr:
+    runs-on: ubuntu-latest
+
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: "ブランチ名からラベルを選択する"
+        id: label_name
+        run: |
+          branch_type=$(echo ${{github.head_ref}} | cut -d "/" -f1)
+          if [ $branch_type == 'feature' ]; then
+            label_name=$(echo '🌟feature')
+          elif [ $branch_type == 'bugfix' ] || [ $branch_type == 'hotfix' ]; then
+            label_name=$(echo '🕷️bug')
+          elif [ $branch_type == 'refactor' ]; then
+            label_name=$(echo '♻refactor')
+          elif [ $branch_type == 'test' ]; then
+            label_name=$(echo '✅test')
+          elif [ $branch_type == 'develop' ]; then
+            label_name=$(echo '💎release')
+          else
+            label_name="🛠️fix"
+          fi
+          echo "::set-output name=label_name::$label_name"
+
+      - name: "ラベルを付ける"
+        if: ${{ steps.label_name.outputs.label_name }}
+        run: |
+          number=$(echo $GITHUB_REF | sed -e 's/[^0-9]//g')
+          gh pr edit $number --add-label ${{ steps.label_name.outputs.label_name }}
