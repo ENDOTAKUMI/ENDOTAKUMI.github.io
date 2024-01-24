@@ -1,5 +1,25 @@
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import ScreenA from './components/ScreenA';
+import ScreenB from './components/ScreenB';
+import ScreenC from './components/ScreenC';
+import Footer from './components/Footer';
 
-export default function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+function App() {
+  return (
+    <BrowserRouter>
+      <Navigation />
+      <div className="container mx-auto mt-8">
+        <Routes>
+          <Route path="/" element={<ScreenA />} />
+          <Route path="/a" element={<ScreenA />} />
+          <Route path="/b" element={<ScreenB />} />
+          <Route path="/c" element={<ScreenC />} />
+        </Routes>
+      </div>
+      <Footer />
+    </BrowserRouter>
+  );
 }
+
+export default App;
