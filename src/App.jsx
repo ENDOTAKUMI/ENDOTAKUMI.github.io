@@ -5,19 +5,22 @@ import ScreenB from './components/ScreenB';
 import ScreenC from './components/ScreenC';
 import Footer from './components/Footer';
 
+// App コンポーネントに Tailwind CSS を適用
 function App() {
   return (
     <BrowserRouter>
-      <Navigation />
-      <div className="container mx-auto mt-8">
-        <Routes>
-          <Route path="/" element={<ScreenA />} />
-          <Route path="/a" element={<ScreenA />} />
-          <Route path="/b" element={<ScreenB />} />
-          <Route path="/c" element={<ScreenC />} />
-        </Routes>
+      <div className="flex flex-col min-h-screen">
+        <Navigation />
+        <div className="container mx-auto mt-8 flex-grow">
+          <Routes>
+            <Route path="/" element={<ScreenA />} />
+            <Route path="/a" element={<ScreenA />} />
+            <Route path="/b" element={<ScreenB />} />
+            <Route path="/c" element={<ScreenC />} />
+          </Routes>
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </BrowserRouter>
   );
 }
