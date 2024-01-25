@@ -1,4 +1,5 @@
 import React from 'react';
+import ImageWithSkeleton from './ImageWithSkeleton';
 
 const SectionComponent = ({
   title,
@@ -34,19 +35,10 @@ const SectionComponent = ({
           <div className="lg:col-span-2 lg:py-8">
             <ul className="grid grid-cols-2 gap-4">
               <li>
-                <img
-                  src={image1}
-                  alt=""
-                  className="aspect-square w-full rounded object-cover"
-                />
+                <ImageWithSkeleton src={image1} alt="" />
               </li>
-
               <li>
-                <img
-                  src={image2}
-                  alt=""
-                  className="aspect-square w-full rounded object-cover"
-                />
+                <ImageWithSkeleton src={image2} alt="" />
               </li>
             </ul>
           </div>
