@@ -1,23 +1,12 @@
 import React from 'react';
 import SectionComponent from '../components/SectionComponent';
+import Notice from '../components/Notice';
 
 const Works = () => {
   return (
     <div className="flex items-stretch gap-4">
       <div className="flex-1">
-        <div
-          role="alert"
-          className="rounded border-s-4 border-red-500 bg-red-50 p-4"
-        >
-          <strong className="block font-medium text-red-800">
-            {' '}
-            サイトリニューアル中{' '}
-          </strong>
-
-          <p className="mt-2 text-sm text-red-700">
-            現在、サイトリニューアル中です。ご迷惑をおかけしますが、しばらくお待ちください。
-          </p>
-        </div>
+        <Notice />
 
         {/* ---------- */}
         <SectionComponent
