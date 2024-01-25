@@ -9,24 +9,25 @@ const Works = () => {
         <Notice />
         <SectionComponent
           title="FlutterKaigi 2023"
-          detail="詳細...詳細...詳細..."
-          image1="./image-example.png"
-          image2="./image-example.png"
-          link="https://example.com"
+          detail="備品管理、当日撮影などを担当しました"
+          image1="./image-flutter-kaigi-2023-people.jpg"
+          image2="./image-flutter-kaigi-2023-name.jpg"
+          link_title="公式サイトへ"
+          link="https://flutterkaigi.jp/2023/"
         />
         <SectionComponent
           title="PHPerKaigi 2020"
-          detail="詳細...詳細...詳細..."
-          image1="./image-example.png"
+          detail="受付を担当しました"
+          image1="./image-phperkaigi-2020-people.png"
           image2="./image-example.png"
-          link="https://example.com"
+          link="https://phperkaigi.jp/2020/"
         />
         <SectionComponent
           title="Kotlin Fest 2019"
-          detail="詳細...詳細...詳細..."
-          image1="./image-example.png"
+          detail="撮影を担当しました"
+          image1="./image-kotlin-fest-2019-people.png"
           image2="./image-example.png"
-          link="https://example.com"
+          link="https://kotlin.connpass.com/event/129860/"
         />
       </div>
     </div>
