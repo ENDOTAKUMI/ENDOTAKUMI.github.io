@@ -16,14 +16,6 @@ const ScreenA = () => {
 
           <p className="mt-2 text-sm text-red-700">
             現在、サイトリニューアル中です。ご迷惑をおかけしますが、しばらくお待ちください。
-            旧ポートフォリオは
-            <a
-              href="https://endotakumi.github.io/portfolio-2023/"
-              target="__blank"
-            >
-              こちら
-            </a>
-            。
           </p>
         </div>
 
