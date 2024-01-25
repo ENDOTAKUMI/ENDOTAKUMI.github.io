@@ -1,8 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navigation from './components/Navigation';
-import ScreenA from './components/ScreenA';
-import ScreenB from './components/ScreenB';
-import ScreenC from './components/ScreenC';
+import Home from './components/Home';
+import Works from './components/Works';
 import Footer from './components/Footer';
 
 // App コンポーネントに Tailwind CSS を適用
@@ -13,10 +12,9 @@ function App() {
         <Navigation />
         <div className="container mx-auto mt-8 flex-grow">
           <Routes>
-            <Route path="/" element={<ScreenA />} />
-            <Route path="/a" element={<ScreenA />} />
-            <Route path="/b" element={<ScreenB />} />
-            <Route path="/c" element={<ScreenC />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/Home" element={<Home />} />
+            <Route path="/works" element={<Works />} />
           </Routes>
         </div>
         <Footer />

@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionComponent from './SectionComponent';
 
-const ScreenA = () => {
+const Works = () => {
   return (
     <div className="flex items-stretch gap-4">
       <div className="flex-1">
@@ -40,4 +40,4 @@ const ScreenA = () => {
   );
 };
 
-export default ScreenA;
+export default Works;
