@@ -1,5 +1,5 @@
 import React from 'react';
-import SectionComponent from './SectionComponent';
+import SectionComponent from '../components/SectionComponent';
 
 const Works = () => {
   return (
