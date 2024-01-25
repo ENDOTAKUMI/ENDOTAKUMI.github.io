@@ -7,23 +7,27 @@ const Works = () => {
     <div className="flex items-stretch gap-4">
       <div className="flex-1">
         <Notice />
-
-        {/* ---------- */}
         <SectionComponent
-          title="タイトル1"
+          title="FlutterKaigi 2023"
           detail="詳細...詳細...詳細..."
           image1="./image-example.png"
           image2="./image-example.png"
           link="https://example.com"
         />
         <SectionComponent
-          title="タイトル2"
+          title="PHPerKaigi 2020"
           detail="詳細...詳細...詳細..."
           image1="./image-example.png"
           image2="./image-example.png"
           link="https://example.com"
         />
-        {/* ---------- */}
+        <SectionComponent
+          title="Kotlin Fest 2019"
+          detail="詳細...詳細...詳細..."
+          image1="./image-example.png"
+          image2="./image-example.png"
+          link="https://example.com"
+        />
       </div>
     </div>
   );
