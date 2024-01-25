@@ -11,7 +11,7 @@ export default defineConfig({
       includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
       injectRegister: 'auto',
       manifest: {
-        name: 'PWA Sample Apps',
+        name: 'ENDO Takumi portfolio',
         short_name: 'ENDO Takumi portfolio',
         description: '遠藤拓巳のポートフォリオです。',
         theme_color: '#ffffff',

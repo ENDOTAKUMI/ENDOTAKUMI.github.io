@@ -6,18 +6,13 @@ const Navigation = (props) => {
     <nav className="bg-gray-800 p-4">
       <ul className="flex justify-between">
         <li className="mr-6">
-          <Link to="/a" className="text-white hover:text-gray-300">
-            ScreenA
+          <Link to="/home" className="text-white hover:text-gray-300">
+            Home
           </Link>
         </li>
         <li className="mr-6">
-          <Link to="/b" className="text-white hover:text-gray-300">
-            ScreenB
-          </Link>
-        </li>
-        <li className="mr-6">
-          <Link to="/c" className="text-white hover:text-gray-300">
-            ScreenC
+          <Link to="/works" className="text-white hover:text-gray-300">
+            Works
           </Link>
         </li>
       </ul>
