@@ -1,23 +1,23 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navigation from './components/Navigation';
-import ScreenA from './components/ScreenA';
-import ScreenB from './components/ScreenB';
-import ScreenC from './components/ScreenC';
+import Home from './pages/Home';
+import Works from './pages/Works';
 import Footer from './components/Footer';
 
 function App() {
   return (
     <BrowserRouter>
-      <Navigation />
-      <div className="container mx-auto mt-8">
-        <Routes>
-          <Route path="/" element={<ScreenA />} />
-          <Route path="/a" element={<ScreenA />} />
-          <Route path="/b" element={<ScreenB />} />
-          <Route path="/c" element={<ScreenC />} />
-        </Routes>
+      <div className="flex flex-col min-h-screen">
+        <Navigation />
+        <div className="container mx-auto mt-8 flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Home" element={<Home />} />
+            <Route path="/works" element={<Works />} />
+          </Routes>
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </BrowserRouter>
   );
 }
