@@ -26,7 +26,7 @@ const Works = () => {
           title="Kotlin Fest 2019"
           detail="撮影を担当しました"
           image1="./image-kotlin-fest-2019-people.png"
-          image2="./image-example.png"
+          image2="./image-kotlin-fest-2019-logo.jpeg"
           link="https://kotlin.connpass.com/event/129860/"
         />
       </div>
