@@ -92,7 +92,8 @@ const CalendarEvents = () => {
       ) : (
         <>
           <div className="text-center text-red-600 font-bold">
-            🗓 現在以下の予定が入っています。
+            🗓 現在予定が入っています
+            <br />⏳ 終了時間は下記の通りです
           </div>
 
           <ul className="list-none space-y-4">
@@ -102,9 +103,8 @@ const CalendarEvents = () => {
                 className="p-4 border border-gray-200 rounded shadow"
               >
                 <div className="font-bold text-lg">
-                  開始時刻: {formatDate(event.start)}
+                  終了時刻: {formatDate(event.end)}
                 </div>
-                <div className="text-lg">終了時刻: {formatDate(event.end)}</div>
               </li>
             ))}
           </ul>
