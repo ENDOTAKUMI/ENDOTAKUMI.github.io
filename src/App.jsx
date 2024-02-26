@@ -12,7 +12,6 @@ function App() {
         <div className="container mx-auto mt-8 flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/Home" element={<Home />} />
             <Route path="/works" element={<Works />} />
           </Routes>
         </div>
