@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navigation = (props) => {
   return (
-    <nav className="bg-gray-800 p-4">
+    <nav className="bg-gray-800 p-4 flex justify-center">
       <ul className="flex justify-between">
         <li className="mr-6">
           <Link to="/home" className="text-white hover:text-gray-300">
