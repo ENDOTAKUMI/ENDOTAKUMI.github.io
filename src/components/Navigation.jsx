@@ -1,22 +1,37 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navigation = (props) => {
   return (
     <nav className="bg-gray-800 p-4 flex justify-center">
       <ul className="flex justify-between">
         <li className="mr-6">
-          <Link to="/home" className="text-white hover:text-gray-300">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive
+                ? 'text-gray-600 hover:text-gray-300'
+                : 'text-white hover:text-gray-300'
+            }
+          >
             Home
-          </Link>
+          </NavLink>
         </li>
         <li className="mr-6">
-          <Link to="/works" className="text-white hover:text-gray-300">
+          <NavLink
+            to="/works"
+            className={({ isActive }) =>
+              isActive
+                ? 'text-gray-600 hover:text-gray-300'
+                : 'text-white hover:text-gray-300'
+            }
+          >
             Works
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>
   );
 };
+
 export default Navigation;
