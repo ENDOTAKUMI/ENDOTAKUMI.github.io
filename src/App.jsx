@@ -3,6 +3,7 @@ import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import Works from './pages/Works';
 import Footer from './components/Footer';
+import CalendarEvents from './pages/CalendarEvents';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/works" element={<Works />} />
+            <Route path="/calendar-events" element={<CalendarEvents />} />
           </Routes>
         </div>
         <Footer />
