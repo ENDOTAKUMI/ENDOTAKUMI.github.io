@@ -1,6 +1,12 @@
 import React from 'react';
 import Notice from '../components/Notice';
 import ImageWithSkeleton from '../components/ImageWithSkeleton';
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
 
 const Home = () => {
   return (
@@ -35,12 +41,40 @@ const Home = () => {
                   </a>
                 </ul>
                 <p>
-                  日本工学院専門学校ITカレッジ
-                  ITスペシャリスト科に2020年度入学、現在4年生。
+                  モバイルアプリ・Webサイトなどの開発からPICマイコンを使用した電子工作などを行っています。
                   <br />
-                  プログラミングではFlutter, Android,
-                  Webなどを、またAdobeを用いた動画編集、デザインなど多岐にわたり勉強をしています。
+                  カンファレンス運営などではカメラマンとしても活動しています。
+                  <br />
                 </p>
+                <Timeline>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot />
+                      <TimelineConnector />
+                    </TimelineSeparator>
+                    <TimelineContent>
+                      2017/04 - 2020/03 埼玉県立狭山工業高等学校 電子機械科
+                    </TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot />
+                      <TimelineConnector />
+                    </TimelineSeparator>
+                    <TimelineContent>
+                      2020/04 - 2024/03 日本工学院専門学校 ITカレッジ
+                      ITスペシャリスト科
+                    </TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot />
+                    </TimelineSeparator>
+                    <TimelineContent>
+                      2024/04 - 渋谷のIT企業に入社予定
+                    </TimelineContent>
+                  </TimelineItem>
+                </Timeline>
               </div>
             </div>
           </section>

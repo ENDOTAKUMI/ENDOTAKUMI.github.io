@@ -21,6 +21,7 @@ const Works = () => {
           image1="./image-phperkaigi-2020-people.png"
           image2="./image-example.png"
           link="https://phperkaigi.jp/2020/"
+          link_title="公式サイトへ"
         />
         <SectionComponent
           title="Kotlin Fest 2019"
@@ -28,6 +29,7 @@ const Works = () => {
           image1="./image-kotlin-fest-2019-people.png"
           image2="./image-kotlin-fest-2019-logo.jpeg"
           link="https://kotlin.connpass.com/event/129860/"
+          link_title="公式サイトへ"
         />
       </div>
     </div>
