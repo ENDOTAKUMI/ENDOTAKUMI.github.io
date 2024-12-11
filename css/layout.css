@@ -1,0 +1,387 @@
+@charset "utf-8";
+/* レイアウトのためのCSS */
+
+body {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 0.8rem;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  outline: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* font-family */
+
+#splash-logo,
+.top-lead,
+h1,
+h2,
+h3 span,
+#g-nav,
+#pc-nav,
+.openbtn,
+#footer {
+  font-family: "Lato", sans-serif;
+  letter-spacing: 0.1em;
+}
+
+/* splash */
+
+#splash-logo {
+  font-size: 1.2rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgb(9, 63, 180);
+}
+
+/* g-nav */
+
+#g-nav.panelactive li:last-child a {
+  margin: 30px 0 0 0;
+  padding: 10px 20px;
+  border: 2px solid #eee;
+  white-space: nowrap;
+}
+
+/*pc-nav*/
+
+#pc-nav span.bgLRextend::before {
+  background: #333;
+}
+
+@media screen and (max-width: 990px) {
+  #pc-nav {
+    display: none;
+  }
+}
+
+/* heading */
+
+h1 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  line-height: 1;
+  letter-spacing: 0.2em;
+}
+
+@media screen and (max-width: 550px) {
+  h1 {
+    font-size: 1.2rem;
+    top: 32%;
+  }
+}
+
+h1 a {
+  color: rgb(9, 63, 180);
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+/* lead */
+
+.top-lead {
+  position: fixed;
+  bottom: 10%;
+  left: 5%;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #eee;
+}
+
+.top-lead span.bgLRextend::before {
+  background: #333;
+}
+
+@media screen and (max-width: 550px) {
+  .top-lead {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .top-lead {
+    font-size: 1.8rem;
+  }
+}
+
+/* main-area */
+
+#main-area {
+  width: 90%;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+/* profile */
+
+#profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 0 100px 0;
+}
+
+@media screen and (max-width: 768px) {
+  #profile {
+    margin: 0 0 50px 0;
+  }
+}
+
+#profile .img {
+  width: 40%;
+  min-height: 590px;
+  background: url("../img/icon.png") no-repeat center;
+  background-size: cover;
+}
+
+#profile .content {
+  width: 50%;
+  text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+  #profile .img {
+    width: 100%;
+    min-height: 290px;
+    margin: 0 0 50px 0;
+  }
+
+  #profile .content {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+#profile h2 {
+  color: rgb(9, 63, 180);
+  margin: 0 0 30px 0;
+}
+
+#profile p {
+  line-height: 2;
+  margin: 0 0 50px 0;
+}
+
+#profile .profile-lead {
+  position: relative;
+  color: rgb(9, 63, 180);
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0 0 90px 0;
+}
+
+@media screen and (max-width: 768px) {
+  #profile .profile-lead {
+    font-size: 1rem;
+  }
+}
+
+#profile .profile-lead::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  background: rgb(9, 63, 180);
+  width: 12em;
+  height: 3px;
+}
+
+/* works */
+
+#works h2 {
+  text-align: center;
+  margin: 0 0 100px 0;
+}
+
+@media screen and (max-width: 550px) {
+  #works h2 {
+    margin: 0 0 50px 0;
+  }
+}
+
+#works h2 span.bgLRextend::before {
+  background: #333;
+}
+
+#works .works-area {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 0 300px 0;
+}
+
+@media screen and (max-width: 768px) {
+  #works .works-area {
+    margin: 0 0 200px 0;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  #works .works-area {
+    margin: 0 0 50px 0;
+  }
+}
+
+#works .works-area::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 23em;
+  background: #f3f3f3;
+  right: 10%;
+  top: 20%;
+  z-index: -1;
+}
+
+#works .works-area:nth-of-type(2n + 1) {
+  flex-direction: row-reverse;
+}
+
+#works .works-area .img {
+  width: 50%;
+}
+
+#works .works-area .content {
+  width: 40%;
+  background: #fff;
+  box-shadow: 0 0 20px #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 150px;
+}
+
+@media screen and (max-width: 768px) {
+  #works .works-area .content {
+    width: 47%;
+    top: 100px;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  #works .works-area .img {
+    width: 100%;
+    z-index: 2;
+  }
+
+  #works .works-area .content {
+    width: 100%;
+    top: -10px;
+    animation: none;
+    opacity: 1;
+    z-index: 1;
+  }
+}
+
+#works .works-area .content-area {
+  padding: 40px;
+}
+
+#works .works-area .content-area h3 {
+  text-align: center;
+  font-size: 1rem;
+  margin: 0 0 30px 0;
+}
+
+#works .works-area .content-area h3 span {
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+  font-size: 1.2rem;
+}
+
+#works .works-area .content-area p {
+  margin: 0 0 30px 0;
+}
+
+#works .btn {
+  text-align: center;
+}
+
+/* contact */
+
+#contact {
+  text-align: center;
+  margin: 0 0 100px 0;
+}
+
+#contact h2 {
+  text-align: center;
+  margin: 0 0 100px 0;
+  color: rgb(9, 63, 180);
+}
+
+@media screen and (max-width: 550px) {
+  #contact h2 {
+    margin: 0 0 50px 0;
+  }
+}
+
+/* footer */
+
+#footer {
+  padding: 100px 0;
+  border-top: 1px solid #333;
+  text-align: center;
+  background: #fff;
+  position: relative;
+  text-transform: uppercase;
+}
+
+#footer .footer-logo {
+  font-weight: bold;
+  letter-spacing: 0.3em;
+  margin: 0 0 50px 0;
+  color: #666;
+}
+
+#footer small {
+  color: #888;
+}
