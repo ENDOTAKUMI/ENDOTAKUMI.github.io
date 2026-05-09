@@ -1,10 +1,17 @@
 @charset "utf-8";
 
+/*!
+ * parts.css
+ * Component-level styles: splash screen, page transition, mobile and
+ * desktop navigation, hamburger button, scroll progress bar, animated
+ * buttons, page-top button, scroll-triggered animations, and social icons.
+ */
+
 /*===========================================================*/
-/*背景色が伸びる（下から上） */
+/* Page transition: background extends (bottom to top) */
 /*===========================================================*/
 
-/*========= ローディング画面のためのCSS ===============*/
+/*========= Loading screen ===============*/
 #splash {
   position: fixed;
   width: 100%;
@@ -26,9 +33,9 @@
   width: 50px;
 }
 
-/*========= 画面遷移のためのCSS ===============*/
+/*========= Page transition ===============*/
 
-/*画面遷移アニメーション*/
+/* Page transition animation */
 
 .splashbg {
   display: none;
@@ -44,7 +51,7 @@ body.appear .splashbg {
   left: 0;
   transform: scaleY(0);
   background-color: rgb(9, 63, 180);
-  /*伸びる背景色の設定*/
+  /* Extending background color */
   animation-name: PageAnime;
   animation-duration: 1.2s;
   animation-timing-function: ease-in-out;
@@ -72,14 +79,14 @@ body.appear .splashbg {
   }
 }
 
-/*画面遷移の後現れるコンテンツ設定*/
+/* Content that appears after the page transition */
 
 #wrapper {
   opacity: 0;
-  /*はじめは透過0に*/
+  /* Hidden initially (opacity 0) */
 }
 
-/*bodyにappearクラスがついたら出現*/
+/* Appears once the body has the .appear class */
 body.appear #wrapper {
   animation-name: PageAnimeAppear;
   animation-duration: 1s;
@@ -99,42 +106,42 @@ body.appear #wrapper {
 }
 
 /*===========================================================*/
-/*クリックしたらナビが下から上に出現 */
+/* Mobile nav: slides up from the bottom on click */
 /*===========================================================*/
 #g-nav {
-  /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+  /* Fixed position with high z-index to bring it to the front */
   position: fixed;
   z-index: 999;
-  /*ナビのスタート位置と形状*/
+  /* Initial position and shape of the nav */
   bottom: -120%;
   width: 100%;
   height: 100vh;
-  /*ナビの高さ*/
+  /* Nav height */
   background: rgb(9, 63, 180);
-  /*動き*/
+  /* Motion */
   transition: all 0.6s;
 }
 
-/*アクティブクラスがついたら位置を0に*/
+/* Slide to 0 when the .panelactive class is added */
 #g-nav.panelactive {
   bottom: 0;
 }
 
-/*ナビゲーションの縦スクロール*/
+/* Vertical scroll for the nav */
 #g-nav #g-nav-list {
-  /*ナビの数が増えた場合縦スクロール*/
+  /* Allow vertical scrolling when nav items overflow */
   position: fixed;
   z-index: 999;
   width: 100%;
   height: 100vh;
-  /*表示する高さ*/
+  /* Visible height */
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
 
-/*ナビゲーション*/
+/* Navigation */
 #g-nav ul {
-  /*ナビゲーション天地中央揃え*/
+  /* Center the nav vertically and horizontally */
   position: absolute;
   z-index: 999;
   top: 50%;
@@ -142,7 +149,7 @@ body.appear #wrapper {
   transform: translate(-50%, -50%);
 }
 
-/*リストのレイアウト設定*/
+/* List layout */
 
 #g-nav li {
   list-style: none;
@@ -160,13 +167,13 @@ body.appear #wrapper {
 }
 
 /*===========================================================*/
-/*	MENUが×に */
+/* Hamburger button: morphs into an X when active */
 /*===========================================================*/
 
 .openbtn {
   position: fixed;
   z-index: 9999;
-  /*ボタンを最前面に*/
+  /* Bring the button to the front */
   top: 0;
   right: 0;
   cursor: pointer;
@@ -175,11 +182,11 @@ body.appear #wrapper {
   border-left: 2px solid #333;
 }
 
-/*ボタン内側*/
+/* Inside the button */
 .openbtn span {
   display: inline-block;
   transition: all 0.4s;
-  /*アニメーションの設定*/
+  /* Animation settings */
   position: absolute;
 }
 
@@ -211,7 +218,8 @@ body.appear #wrapper {
   top: 35px;
 }
 
-/*activeクラスが付与されると線が回転して×になり、Menu表記をしている2つ目の要素が透過して消える*/
+/* When .active is added, the bars rotate into an X and the
+   "Menu" label (the second span) fades out */
 
 .openbtn.active span:nth-of-type(1),
 .openbtn.active span:nth-of-type(3) {
@@ -235,16 +243,16 @@ body.appear #wrapper {
 }
 
 /*===========================================================*/
-/* 追従メニューの現在地ハイライト*/
+/* Sticky nav: highlight the current section */
 /*===========================================================*/
 
-/*========= 現在地表示のためのCSS ===============*/
+/*========= Current section indicator ===============*/
 
 #header {
   position: fixed;
-  /*header固定*/
+  /* Fixed header */
   height: 100px;
-  /*Headerの高さ設定*/
+  /* Header height */
   width: 100%;
   z-index: 9;
   display: flex;
@@ -281,22 +289,22 @@ body.appear #wrapper {
 }
 
 /*===========================================================*/
-/*スクロールをするとエリアの高さに合わせて線が伸びる*/
+/* Scroll progress bar: extends with the scroll position */
 /*===========================================================*/
 
 .scrollgress {
   z-index: 99;
-  /*他のposition指定しているエリアより前に出すためz-indexの数字を大きく*/
+  /* High z-index so it sits above other positioned areas */
 }
 
 /*===========================================================*/
-/*下線が伸びて背景に変わる*/
+/* Button: underline expands into a full background on hover */
 /*===========================================================*/
 
 .btnlinestretches3 {
-  /*線の基点とするためrelativeを指定*/
+  /* Relative positioning so the underline can anchor to it */
   position: relative;
-  /*ボタンの形状*/
+  /* Button shape */
   color: #333;
   padding: 5px 30px;
   display: inline-block;
@@ -304,9 +312,9 @@ body.appear #wrapper {
   outline: none;
 }
 
-/*テキストの設定*/
+/* Text */
 .btnlinestretches3 span {
-  /*テキストを前面に出すためz-indexの値を高く設定*/
+  /* High z-index keeps the text above the expanding background */
   position: relative;
   z-index: 2;
 }
@@ -315,32 +323,32 @@ body.appear #wrapper {
   color: #fff;
 }
 
-/*線の設定*/
+/* Underline */
 .btnlinestretches3::after {
   content: "";
-  /*絶対配置で線の位置を決める*/
+  /* Absolute positioning to place the underline */
   position: absolute;
   z-index: 1;
   bottom: 0;
   left: 0;
-  /*線の形状*/
+  /* Underline shape */
   background: #333;
   width: 100%;
   height: 3px;
-  /*アニメーションの指定*/
+  /* Animation */
   transition: all 0.3s ease-in-out;
 }
 
-/*線が伸びて背景に*/
+/* Underline expands into the background on hover */
 .btnlinestretches3:hover::after {
   height: 100%;
 }
 
 /*===========================================================*/
-/*ページの指定の高さを超えたら右から出現*/
+/* Page-top button: appears from the right after a scroll threshold */
 /*===========================================================*/
 
-/*リンクの形状*/
+/* Link shape */
 #page-top a {
   display: flex;
   justify-content: center;
@@ -360,18 +368,18 @@ body.appear #wrapper {
   background: #777;
 }
 
-/*リンクを右下に固定*/
+/* Pin the link to the bottom-right */
 #page-top {
   position: fixed;
   right: 0;
   bottom: 0;
   z-index: 2;
-  /*はじめは非表示*/
+  /* Hidden initially */
   opacity: 0;
   transform: translateX(100px);
 }
 
-/*　左の動き　*/
+/* Slide-in: move from right to left */
 
 #page-top.LeftMove {
   animation: LeftAnime 0.5s forwards;
@@ -389,7 +397,7 @@ body.appear #wrapper {
   }
 }
 
-/*　右の動き　*/
+/* Slide-out: move from left to right */
 
 #page-top.RightMove {
   animation: RightAnime 0.5s forwards;
@@ -408,17 +416,17 @@ body.appear #wrapper {
 }
 
 /*===========================================================*/
-/* 動き*/
+/* Scroll-triggered animations */
 /*===========================================================*/
 
-/*4-9　シャッ（左から）*/
+/* Background sweep from the left */
 .bgextend {
   animation-name: bgextendAnimeBase;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   position: relative;
   overflow: hidden;
-  /*　はみ出た色要素を隠す　*/
+  /* Hide the overflowing color element */
   opacity: 0;
 }
 
@@ -432,7 +440,7 @@ body.appear #wrapper {
   }
 }
 
-/*中の要素*/
+/* Inner element */
 .bgappear {
   animation-name: bgextendAnimeSecond;
   animation-duration: 1s;
@@ -460,7 +468,7 @@ body.appear #wrapper {
   width: 100%;
   height: 100%;
   background-color: rgb(9, 63, 180);
-  /*伸びる背景色の設定*/
+  /* Extending background color */
 }
 
 @keyframes bgLRextendAnime {
@@ -484,7 +492,7 @@ body.appear #wrapper {
   }
 }
 
-/* 4-1 ふわっ（下から） */
+/* Fade up from below */
 
 .fadeUp {
   animation-name: fadeUpAnime;
@@ -505,7 +513,7 @@ body.appear #wrapper {
   }
 }
 
-/* 4-2　パタッ（左へ） */
+/* Flip toward the left */
 .flipLeft {
   animation-name: flipLeftAnime;
   animation-duration: 0.5s;
@@ -526,13 +534,14 @@ body.appear #wrapper {
   }
 }
 
-/* スマホ表示用。flipLeftTriggerを指定している親要素に指定しないとうまく動かない*/
+/* Mobile only: must be set on the parent of .flipLeftTrigger
+   or the animation does not run correctly */
 #profile,
 .works-area {
   transform: translate3d(0, 0, 0);
 }
 
-/* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+/* Hide scroll-triggered elements until their animation runs */
 .bgLRextendTrigger,
 .bgappearTrigger,
 .fadeUpTrigger,
@@ -541,7 +550,7 @@ body.appear #wrapper {
 }
 
 /*===========================================================*/
-/* スクロールすると下のエリアがヘッダーにかぶさる*/
+/* On scroll, the lower area overlaps the header */
 /*===========================================================*/
 
 #top-main {
@@ -558,7 +567,7 @@ body.appear #wrapper {
   z-index: -1;
   width: 90%;
   height: 80vh;
-  /*背景画像設定*/
+  /* Background image */
   background: url("../img/main.png") no-repeat center;
   background-size: cover;
 }
@@ -577,7 +586,7 @@ body.appear #wrapper {
 }
 
 /*===========================================================*/
-/* Contact snsアイコン */
+/* Contact: social icons */
 /*===========================================================*/
 
 .socialEffect__link {
