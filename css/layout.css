@@ -1,5 +1,10 @@
 @charset "utf-8";
-/* レイアウトのためのCSS */
+
+/*!
+ * layout.css
+ * Page layout: typography defaults, navigation, heading, top lead,
+ * main area, profile, works grid, contact, and footer.
+ */
 
 body {
   font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
