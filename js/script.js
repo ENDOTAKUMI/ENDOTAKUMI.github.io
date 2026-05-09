@@ -20,16 +20,20 @@ function PositionCheck() {
 function ScrollAnime() {
   //スクロールした際のナビゲーションの関数にまとめる
   var scroll = Math.round($(window).scrollTop());
+  // ページ末尾に到達しているかどうか（ビューポートが高くContactのtopまで
+  // スクロールできない場合でも最終セクションをcurrentにするためのフォールバック）
+  var atBottom = scroll + $(window).height() >= $(document).height() - 5;
   var NavElem = $("#pc-nav li"); //ナビゲーションのliの何番目かを定義するための準備
   $("#pc-nav li").removeClass("current"); //全てのナビゲーションの現在地クラスを除去
-  if (scroll >= elemTop[0] && scroll < elemTop[1]) {
-    //.scroll-point 1つめ以上.scroll-point 2つめ未満
-    $(NavElem[0]).addClass("current"); //1つめのliに現在地クラスを付与
-  } else if (scroll >= elemTop[1] && scroll < elemTop[2]) {
+  if (atBottom || scroll >= elemTop[2]) {
+    //最終セクション（Contact）以降、またはページ末尾
+    $(NavElem[2]).addClass("current"); //3つめのliに現在地クラスを付与
+  } else if (scroll >= elemTop[1]) {
     //.scroll-point 2つめ以上.scroll-point 3つめ未満
     $(NavElem[1]).addClass("current"); //2つめのliに現在地クラスを付与
-  } else if (scroll >= elemTop[1]) {
-    $(NavElem[2]).addClass("current"); //3つめのliに現在地クラスを付与
+  } else if (scroll >= elemTop[0]) {
+    //.scroll-point 1つめ以上.scroll-point 2つめ未満
+    $(NavElem[0]).addClass("current"); //1つめのliに現在地クラスを付与
   }
 }
 
